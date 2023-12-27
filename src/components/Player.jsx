@@ -1,24 +1,33 @@
 import { useState } from 'react';
 
-export default function Player({ name, symbol }) {
-    
+export default function Player({ initialName, symbol }) {
+    const [playerName, setPlayerName] = useState(initialName);
     const [isEditing, setIsEditing] = useState(false);
-
+    
+    /**
+     * Best practice: Use functions to update state based on previous state, instead of just !isEditing
+     */
     function handleEditClick() {
-        // Best practice: Use function instead of !isEditing directly
         setIsEditing((editing) => !editing);
     }
 
-    let playerName = <span className="player-name">{name}</span>;
-    
+    function handleChange(event) {
+        setPlayerName(event.target.value);
+    }
+
+    let editablePlayerName = <span className="player-name">{playerName}</span>;
+    /**
+     * HandleChange function will get executed everytime the user presses a key, and will automatically get
+     * as an argument the event object that is emitted on each interaction of the user.
+     */
     if (isEditing) {
-        playerName = <input type="text" required value={ name}/>
+        editablePlayerName = <input type="text" required value={playerName} onChange={handleChange}/>
     }
 
     return (
           <li>
             <span className="player">
-                {playerName}
+                {editablePlayerName}
                 <span className="player-symbol">{symbol}</span>
           </span>
             <button onClick={handleEditClick}>{ isEditing ? 'Save' : 'Edit'}</button>
