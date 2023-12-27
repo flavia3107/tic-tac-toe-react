@@ -21,6 +21,9 @@ export default function Player({ initialName, symbol }) {
      * as an argument the event object that is emitted on each interaction of the user.
      */
     if (isEditing) {
+        /**
+         * This: value={playerName} onChange={handleChange} is also known as two-way binding
+         */
         editablePlayerName = <input type="text" required value={playerName} onChange={handleChange}/>
     }
 
