@@ -4,6 +4,12 @@ import Log from './components/Log.jsx';
 import { useState } from 'react';
 import { WINNING_COMBINATIONS } from './winning-combinations.js';
 
+const initialGameBoard = [
+    [null, null, null],
+    [null, null, null],
+    [null, null, null],
+];
+
 function deriveActivePlayer(state) {
   let currentPlayer = 'X';
     if (!!state.length && state[0].player === 'X') {
@@ -15,6 +21,23 @@ function deriveActivePlayer(state) {
 function App() {
   const [gameTurns, setGameTurns] = useState([]);
   const activePlayer = deriveActivePlayer(gameTurns);
+  
+  let gameBoard = initialGameBoard;
+  for (const turn of gameTurns) {
+    const { square, player } = turn;
+    const { row, column } = square;
+    gameBoard[row][column] = player;
+  }
+
+  /**
+   * Not needed to check if there is a winner (or create a state for that) since 
+   * the app will be triggered everytime a button is clicked,(because of the gameTurns state triggerer)
+   * that's why the logic of checking a winner can be outside the handleSelectSquare
+   */
+
+  for (const combination of WINNING_COMBINATIONS) {
+    // const firstSquareSymbol =
+  }
 
   function handleSelectSquare(row, column) {
     setGameTurns(prevTurns => {
@@ -47,7 +70,7 @@ function App() {
         <Player initialName="Player 1" symbol="X" isActive={activePlayer === 'X'}/>
         <Player initialName="Player 2" symbol="O" isActive={activePlayer === 'O'}/>
       </ol>
-      <GameBoard turns={gameTurns} onSelectSquare={handleSelectSquare} />
+      <GameBoard board={gameBoard} onSelectSquare={handleSelectSquare} />
     </div>
     <Log  turns={gameTurns}/>
   </main>
