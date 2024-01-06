@@ -1,6 +1,11 @@
 import { WINNING_COMBINATIONS } from '../winning-combinations';
 
-export const initialGameBoard = [
+export const PLAYERS = {
+    X: 'Player 1',
+    O: 'Player 2'
+}
+
+export const INITIAL_GAME_BOARD = [
     [null, null, null],
     [null, null, null],
     [null, null, null],
@@ -29,7 +34,7 @@ export function deriveWinner(gameBoard, players) {
 }
 
 export function deriveBoard(gameTurns) {
-    let gameBoard = [...initialGameBoard.map(row => [...row])];
+    let gameBoard = [...INITIAL_GAME_BOARD.map(row => [...row])];
     for (const turn of gameTurns) {
         const { square, player } = turn;
         const { row, column } = square;

@@ -3,11 +3,11 @@ import GameBoard from './components/GameBoard.jsx';
 import Log from './components/Log.jsx';
 import { useState } from 'react';
 import GameOver from './components/GameOver.jsx';
-import { deriveActivePlayer, deriveWinner, deriveBoard } from './components/helpers.js';
+import { deriveActivePlayer, deriveWinner, deriveBoard, PLAYERS} from './components/helpers.js';
 
 function App() {
   const [gameTurns, setGameTurns] = useState([]);
-  const [players, setPlayers] = useState({ 'X': 'Player 1', 'O': 'Player 2' });
+  const [players, setPlayers] = useState(PLAYERS);
   
   const activePlayer = deriveActivePlayer(gameTurns);
   const gameBoard = deriveBoard(gameTurns);
@@ -37,8 +37,8 @@ function App() {
   return <main>
     <div id="game-container">
       <ol id="players" className="highlight-player">
-        <Player initialName="Player 1" symbol="X" isActive={activePlayer === 'X'} onSavePlayer={ handlePlayerNameChange}/>
-        <Player initialName="Player 2" symbol="O" isActive={activePlayer === 'O'} onSavePlayer={handlePlayerNameChange}/>
+        <Player initialName={PLAYERS.X} symbol="X" isActive={activePlayer === 'X'} onSavePlayer={ handlePlayerNameChange}/>
+        <Player initialName={PLAYERS.O} symbol="O" isActive={activePlayer === 'O'} onSavePlayer={handlePlayerNameChange}/>
       </ol>
       {(winner || hasDraw) && <GameOver onResetGame={handleRematch} winner={ winner}/>}
       <GameBoard board={gameBoard} onSelectSquare={handleSelectSquare}/>
