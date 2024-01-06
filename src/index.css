@@ -1,15 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Roboto+Slab:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Caprasimo&family=Roboto+Slab:wght@400;700&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: "Roboto Slab", sans-serif;
   line-height: 1.5;
-
   color: #ebe7ef;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -18,33 +16,79 @@ html {
 }
 
 body {
-  background: radial-gradient(
-      circle at top,
-      rgba(241, 210, 70, 0.98),
-      rgba(250, 176, 103, 0.87)
-    ),
-    url('bg-pattern-dark.png');
-  background-repeat: repeat;
-  background-size: 100% 100%, 30% 30%, 100% 100%;
-  min-height: 110rem;
+  margin: 0;
+  background: linear-gradient(90deg, #23221f 0%, #2e3234 100%);
+}
+
+.navigation-top {
+  width: 100%;
+  height: 3.5rem;
+}
+
+.navigation-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  height: 100%;
+  align-items: center;
+  padding: 4px;
+  box-shadow: 0px 3px 39px #18181887;
+}
+
+.navigation-container li {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 header {
   text-align: center;
 }
 
-header img {
-  width: 8rem;
-  object-fit: contain;
-  margin: 3rem auto 1rem auto;
-  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.4));
+.logo {
+  display: flex;
+  align-items: center;
 }
 
-h1 {
-  font-family: 'Caprasimo', cursive;
-  font-size: 3rem;
-  margin: 0 auto 3rem auto;
-  color: #3f3b00;
+.logo > img {
+  height: 35px;
+}
+
+.logo-txt {
+  padding-left: 7px;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  align-items: flex-start;
+}
+
+.logo-img {
+  width: 2rem;
+  margin-right: 3px;
+}
+
+.logo-txt h1,
+.logo-txt span {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  letter-spacing: 4px;
+}
+
+.logo-txt h1 {
+  font-weight: bolder;
+  font-size: 1.1rem;
+  margin-top: 2px;
+}
+
+.logo-txt span {
+  font-weight: lighter;
+  font-size: 0.85rem;
+}
+
+ul {
+  list-style: none;
 }
 
 #game-container {
@@ -52,7 +96,7 @@ h1 {
   margin: 3rem auto;
   padding: 2rem;
   border-radius: 6px;
-  background: linear-gradient(#383624, #282617);
+  background: linear-gradient(90deg, #23221f 0%, #2e3234 100%);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   position: relative;
 }
@@ -88,7 +132,7 @@ h1 {
   width: 3rem;
   border: none;
   background: none;
-  color: #c3ba78;
+  color: #e5e9ea;
   font-size: 0.9rem;
   cursor: pointer;
   transition: color 0.2s;
@@ -111,7 +155,7 @@ h1 {
   display: inline-block;
   width: 10rem;
   font-size: 1rem;
-  color: #e1dec7;
+  color: #e5e9ea;
   text-transform: uppercase;
   margin: 0;
   padding: 0.5rem;
@@ -135,7 +179,7 @@ h1 {
 .player-symbol {
   margin-left: 1rem;
   font-size: 1rem;
-  color: #e1dec7;
+  color: #e5e9ea;
 }
 
 ol {
@@ -153,7 +197,7 @@ ol {
   background: none;
   color: #f8c031;
   border: none;
-  font-family: 'Caprasimo', cursive;
+  font-family: "Caprasimo", cursive;
   font-size: 4rem;
   text-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
   animation: pulse-text-size 2s infinite ease-out;
@@ -182,11 +226,11 @@ ol {
   width: 8rem;
   height: 8rem;
   border: none;
-  background: #aca788;
+  background: #e5e9ea;
   color: #3f3b00;
   font-size: 5rem;
   cursor: pointer;
-  font-family: 'Caprasimo', cursive;
+  font-family: "Caprasimo", cursive;
   padding: 1rem;
 }
 
@@ -205,7 +249,7 @@ ol {
 }
 
 #game-over h2 {
-  font-family: 'Caprasimo', cursive;
+  font-family: "Caprasimo", cursive;
   font-size: 4rem;
   text-align: center;
   color: #fcd256;
@@ -215,7 +259,7 @@ ol {
 #game-over p {
   font-size: 2rem;
   text-align: center;
-  color: #e1dec7;
+  color: #e5e9ea;
 }
 
 #game-over button {
@@ -265,7 +309,7 @@ ol {
 }
 
 #game-hints h2 {
-  font-family: 'Caprasimo', cursive;
+  font-family: "Caprasimo", cursive;
   font-size: 2rem;
   margin: 0;
 }
@@ -298,13 +342,13 @@ ol {
 
 @keyframes pulse-text {
   0% {
-    color: #e1dec7;
+    color: #e5e9ea;
   }
   50% {
     color: #9f9d83;
   }
   100% {
-    color: #e1dec7;
+    color: #e5e9ea;
   }
 }
 
