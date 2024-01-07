@@ -387,3 +387,38 @@ ol {
     transform: scale(1);
   }
 }
+
+@media only screen and (max-width: 900px) {
+  #game-board button {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .symbolHolder {
+    position: relative;
+    bottom: 10px;
+  }
+
+  #players {
+    gap: 1rem;
+  }
+
+  .player-name {
+    display: inline;
+    width: 50%;
+    font-size: 1rem;
+    text-align: start;
+  }
+
+  #players li {
+    flex-direction: column;
+  }
+
+  .app-name {
+    max-width: 8rem;
+  }
+
+  .logo-li-container {
+    margin-left: -3rem;
+  }
+}
