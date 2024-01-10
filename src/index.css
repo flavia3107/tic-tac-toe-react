@@ -42,6 +42,10 @@ body {
   height: 100%;
 }
 
+.logo-li-container {
+  margin-left: -8rem;
+}
+
 header {
   text-align: center;
 }
@@ -119,13 +123,14 @@ ul {
 }
 
 #players.highlight-player li.active {
-  border-color: #f6e35a;
+  border-color: #659dc5;
   animation: pulse 2s infinite ease-in-out;
 }
 
 #players.highlight-player li.active .player-name,
-#players.highlight-player li.active .player-symbol {
-  color: #f6e35a;
+#players.highlight-player li.active .player-symbol,
+#players button {
+  color: #69a3be;
 }
 
 #players button {
@@ -138,10 +143,11 @@ ul {
   transition: color 0.2s;
   padding: 0.5rem 0.25rem 0.25rem 0.25rem;
   text-align: center;
+  margin-bottom: 4px;
 }
 
 #players button:hover {
-  color: #f8ca31;
+  color: #69a3be;
 }
 
 .player {
@@ -170,10 +176,10 @@ ul {
   width: 10rem;
   border: none;
   padding: 0.5rem;
-  animation: pulse-text 2s infinite;
-  background-color: #46432f;
+  background-color: #86d9ffb3;
   text-align: center;
   text-transform: uppercase;
+  color: #e5e9ea;
 }
 
 .player-symbol {
@@ -227,7 +233,7 @@ ol {
   height: 8rem;
   border: none;
   background: #e5e9ea;
-  color: #3f3b00;
+  color: #242421;
   font-size: 5rem;
   cursor: pointer;
   font-family: "Caprasimo", cursive;
@@ -244,7 +250,7 @@ ol {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(40, 38, 23, 0.95);
+  background-color: #18191ae8;
   animation: pop-in 0.5s cubic-bezier(0.68, -0.55, 0.65, 0.52) forwards;
 }
 
@@ -340,18 +346,6 @@ ol {
   }
 }
 
-@keyframes pulse-text {
-  0% {
-    color: #e5e9ea;
-  }
-  50% {
-    color: #9f9d83;
-  }
-  100% {
-    color: #e5e9ea;
-  }
-}
-
 @keyframes pulse-text-size {
   0% {
     transform: scale(1);
@@ -366,16 +360,16 @@ ol {
 
 @keyframes pulse {
   0% {
-    border-color: #f6e35a;
-    box-shadow: 0 0 0 0 rgba(246, 227, 90, 0.4);
+    border-color: #4d6374;
+    box-shadow: 0 0 0 0 #659dc58e;
   }
   50% {
-    border-color: #f8c031;
-    box-shadow: 0 0 0 0.5rem rgba(248, 165, 49, 0);
+    border-color: #54758d;
+    box-shadow: 0 0 0 0.5rem rgba(49, 135, 248, 0);
   }
   100% {
-    border-color: #f6e35a;
-    box-shadow: 0 0 0 0 rgba(246, 227, 90, 0);
+    border-color: #659dc5;
+    box-shadow: 0 0 0 0 rgba(90, 176, 246, 0);
   }
 }
 
@@ -391,5 +385,40 @@ ol {
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #game-board button {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .symbolHolder {
+    position: relative;
+    bottom: 10px;
+  }
+
+  #players {
+    gap: 1rem;
+  }
+
+  .player-name {
+    display: inline;
+    width: 50%;
+    font-size: 1rem;
+    text-align: start;
+  }
+
+  #players li {
+    flex-direction: column;
+  }
+
+  .app-name {
+    max-width: 8rem;
+  }
+
+  .logo-li-container {
+    margin-left: -3rem;
   }
 }
