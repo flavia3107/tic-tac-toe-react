@@ -422,3 +422,10 @@ ol {
     margin-left: -3rem;
   }
 }
+
+@media only screen and (max-width: 430px) {
+  #game-board button {
+    width: 4rem;
+    height: 4rem;
+  }
+}
