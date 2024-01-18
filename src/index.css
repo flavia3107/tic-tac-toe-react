@@ -425,12 +425,9 @@ ol {
 }
 
 @media only screen and (max-width: 430px) {
-}
-
-@media only screen and (max-width: 430px) {
   #game-board button {
-    width: 4rem;
-    height: 4rem;
+    width: 5rem;
+    height: 5rem;
   }
 
   .symbolHolder {
@@ -443,11 +440,16 @@ ol {
   }
 
   #game-board button {
-    font-size: 3.5rem;
+    font-size: 4rem;
     padding: 0;
   }
 
   .player-name {
     font-size: 0.9rem;
+  }
+
+  #game-container {
+    margin: 3rem 1rem;
+    padding: 2rem 1rem;
   }
 }
