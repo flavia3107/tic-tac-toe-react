@@ -20,49 +20,6 @@ body {
   background: linear-gradient(90deg, #23221f 0%, #2e3234 100%);
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  padding: 1rem;
-}
-
-.logo > img {
-  height: 35px;
-}
-
-.logo-txt {
-  padding-left: 7px;
-  display: flex;
-  flex-direction: column;
-  color: #fff;
-  align-items: flex-start;
-}
-
-.logo-img {
-  width: 2rem;
-  margin-right: 3px;
-}
-
-.logo-txt h1,
-.logo-txt span {
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-  letter-spacing: 4px;
-}
-
-.logo-txt h1 {
-  font-weight: bolder;
-  font-size: 1.1rem;
-  margin-top: 2px;
-}
-
-.logo-txt span {
-  font-weight: lighter;
-  font-size: 0.85rem;
-}
-
 #game-container {
   max-width: 45rem;
   margin: 3rem auto;
@@ -302,6 +259,13 @@ ol {
   color: #23221f;
   font: inherit;
   margin-top: 1.5rem;
+}
+
+a {
+  display: flex;
+  width: fit-content;
+  margin: 0.5rem;
+  text-decoration: none;
 }
 
 @keyframes slide-in-from-left {
